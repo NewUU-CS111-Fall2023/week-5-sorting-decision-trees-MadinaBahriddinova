@@ -30,6 +30,31 @@ void displayBookNames(const std::vector<bookName>& books) {
     }
 }
 
+struct Coins {
+    double denomination;
+};
+
+void selectionSort(std::vector<Coins>& coins) {
+    int n = coins.size();
+    for (int i = 0; i < n - 1; ++i) {
+        int min = i;
+        for (int j = i + 1; j < n; ++j) {
+            if (coins[j].denomination < coins[min].denomination) {
+                min = j;
+            }
+        }
+        if (min != i) {
+            std::swap(coins[i], coins[min]);
+        }
+    }
+}
+
+void displayCoins(const std::vector<Coins>& coins) {
+    for (const auto& coin : coins) {
+        std::cout  <<coin.denomination << std::endl;
+    }
+}
+
 int main() {
     std::cout << "Task 1" << std::endl;
     std::vector<bookName> books = {
@@ -47,8 +72,24 @@ int main() {
 
     std::cout << "Books after sorting:" << std::endl;
     displayBookNames(books);
+    
+    
+    
     std::cout << "Task 2" << std::endl;
-    // call for task 2
+    std::vector<Coins> currencies = {
+        {100.0},
+        {50.0},
+        {20.0},
+        {10.0}
+    };
+
+    std::cout << "Coins before sorting:" << std::endl;
+    displayCoins(currencies);
+
+    selectionSort(currencies);
+
+    std::cout << "\nCoins after sorting:" << std::endl;
+    displayCoins(currencies);
     std::cout << "Task 3" << std::endl;
     // call for task 3
     std::cout << "Task 4" << std::endl;
