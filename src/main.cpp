@@ -69,6 +69,24 @@ void displaySwap(const std::vector<int>& soldiers) {
     std::cout << std::endl;
 }
 
+int count(const std::vector<int>& arr) {
+    int count = 0;
+    int n = arr.size();
+
+    if (n < 3) {
+        std::cout << "Criteria cannot be evaluated." << std::endl;
+        return count;
+    }
+
+    for (int i = 1; i < n - 1; ++i) {
+        if (arr[i] > arr[i - 1] && arr[i] > arr[i + 1]) {
+            count++;
+        }
+    }
+
+    return count;
+}
+
 int main() {
     std::cout << "Task 1" << std::endl;
     std::vector<bookName> books = {
@@ -119,7 +137,17 @@ int main() {
 
     std::cout<<std::endl;
     std::cout << "Task 4" << std::endl;
-    // call for task 4
+    std::vector<int> numbers = {1, 8, 7, 9, 10, 5, 9, 11};
+
+    std::cout << "Array: ";
+    for (int num : numbers) {
+        std::cout << num << " ";
+    }
+    std::cout << std::endl;
+
+    int elementsMeetingCriteria = count(numbers);
+    std::cout << "Number of elements meeting the criteria: " << elementsMeetingCriteria << std::endl;
+
 
     std::cout<<std::endl;
     std::cout << "Task 5" << std::endl;
