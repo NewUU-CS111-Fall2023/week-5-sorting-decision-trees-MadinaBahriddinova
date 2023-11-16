@@ -88,7 +88,7 @@ int main() {
     displayBookNames(books);
     
     
-    
+    std::cout<<std::endl;
     std::cout << "Task 2" << std::endl;
     std::vector<Coins> currencies = {
         {100.0},
@@ -104,6 +104,8 @@ int main() {
 
     std::cout << "\nCoins after sorting:" << std::endl;
     displayCoins(currencies);
+
+    std::cout<<std::endl;
     std::cout << "Task 3" << std::endl;
     std::vector<int> soldiers = {1, 2, 3, 4, 5, 6, 7, 8};
 
@@ -114,8 +116,12 @@ int main() {
 
     std::cout << "\nSoldiers after rearranging:" << std::endl;
     displaySwap(soldiers);
+
+    std::cout<<std::endl;
     std::cout << "Task 4" << std::endl;
     // call for task 4
+
+    std::cout<<std::endl;
     std::cout << "Task 5" << std::endl;
     // call for task 5
     return 0;
