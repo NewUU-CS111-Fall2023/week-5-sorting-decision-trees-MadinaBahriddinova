@@ -55,6 +55,20 @@ void displayCoins(const std::vector<Coins>& coins) {
     }
 }
 
+void Swap(std::vector<int>& soldiers) {
+    int n = soldiers.size();
+    for (int i = 0; i < n - 1; i += 2) {
+        std::swap(soldiers[i], soldiers[i + 1]);
+    }
+}
+
+void displaySwap(const std::vector<int>& soldiers) {
+    for (int soldier : soldiers) {
+        std::cout << soldier << " ";
+    }
+    std::cout << std::endl;
+}
+
 int main() {
     std::cout << "Task 1" << std::endl;
     std::vector<bookName> books = {
@@ -91,7 +105,15 @@ int main() {
     std::cout << "\nCoins after sorting:" << std::endl;
     displayCoins(currencies);
     std::cout << "Task 3" << std::endl;
-    // call for task 3
+    std::vector<int> soldiers = {1, 2, 3, 4, 5, 6, 7, 8};
+
+    std::cout << "Soldiers before rearranging:" << std::endl;
+    displaySwap(soldiers);
+
+    Swap(soldiers);
+
+    std::cout << "\nSoldiers after rearranging:" << std::endl;
+    displaySwap(soldiers);
     std::cout << "Task 4" << std::endl;
     // call for task 4
     std::cout << "Task 5" << std::endl;
