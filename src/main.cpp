@@ -5,6 +5,8 @@
  */
 
 #include <iostream>
+#include <vector>
+#include <algorithm>
 #include "task_1.h"
 
 struct bookName {
