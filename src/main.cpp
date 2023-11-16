@@ -87,6 +87,28 @@ int count(const std::vector<int>& arr) {
     return count;
 }
 
+void Colors(const std::vector<std::vector<char>>& matrix) {
+    // Define colors for the symbols
+    char blue = 'b';
+    char yellow = 'y';
+    char white = 'w';
+
+    for (const auto& row : matrix) {
+        for (char symbol : row) {
+            if (symbol == blue) {
+                std::cout << "\033[1;34m\u25A0 "; 
+            } else if (symbol == yellow) {
+                std::cout << "\033[1;33m\u25A0 "; 
+            } else if (symbol == white) {
+                std::cout << "\033[1;37m\u25A0 "; 
+            } else {
+                std::cout << symbol << " ";
+            }
+        }
+        std::cout << "\033[0m" << std::endl; 
+    }
+}
+
 int main() {
     std::cout << "Task 1" << std::endl;
     std::vector<bookName> books = {
@@ -151,6 +173,14 @@ int main() {
 
     std::cout<<std::endl;
     std::cout << "Task 5" << std::endl;
-    // call for task 5
+    std::vector<std::vector<char>> colorMatrix = {
+        {'w', 'y', 'w', 'b', 'y'},
+        {'y', 'b', 'b', 'w', 'b'},
+        {'y', 'w', 'b', 'y', 'w'},
+        {'b', 'y', 'w', 'b', 'y'},
+        {'w', 'y', 'y', 'w', 'b'}
+    };
+
+    Colors(colorMatrix);
     return 0;
 }
